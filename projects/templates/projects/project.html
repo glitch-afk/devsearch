@@ -1,5 +1,8 @@
 {% extends 'base.html' %} {% block content %}
 <h3>{{project.id}}</h3>
 <h2>{{project.title}}</h2>
+{% for tag in project.tags.all %}
+<span style="background-color: lightcoral">{{tag}}</span>
+{% endfor %}
 <p>{{project.description}}</p>
 {% endblock content %}
