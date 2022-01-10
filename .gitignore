@@ -1,6 +1,7 @@
 *.lock
 *.sqlite3
 *.rst
+staticfiles/
 
 # Django #
 *.log
