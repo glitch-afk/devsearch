@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-79%%r(cd=x2-@22&qm6^%uf5nilj=5dc16-8-@8#h=g1=v7375
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
 
 
 # Application definition
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -125,6 +126,9 @@ STATICFILES_DIRS = [BASE_DIR / "static"]
 
 # Tells django where to send user uploaded content
 MEDIA_ROOT = os.path.join(BASE_DIR, "static/images")
+
+# Tells django where to find static files in production
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
